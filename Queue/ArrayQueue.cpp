@@ -26,6 +26,13 @@ public:
 	void print();
 };
 
+//-------------------------------------
+//Consturctor
+//Initial the queue with:
+//-capacity = 10
+//-used = 0(queue is empty)
+//-front = 0(first element index)
+//Allocate dynamic memory for the array
 ArrayQueue::ArrayQueue()
 {
 	capacity = 10;
@@ -34,11 +41,20 @@ ArrayQueue::ArrayQueue()
 	data = new int[capacity];
 }
 
+//-------------------------------------
+//Destructor
+//Free the dynamically allocated memory
+//to prevent memroy leaks.
 ArrayQueue::~ArrayQueue()
 {
 	delete[] data;
 }
 
+//-------------------------------------
+//enqueue()
+//Add a new value to the back of the queue.
+//if the array is full, grow the capacity first.
+//Store the new value, then increase used.
 void ArrayQueue::enqueue(int value)
 {
 	if (used == capacity)
@@ -51,6 +67,11 @@ void ArrayQueue::enqueue(int value)
 	used++;
 }
 
+//-------------------------------------
+//Dequeue()
+//Remove the front element from the queue.
+//if the queue is empty, do nothing.
+//Move front forward and decrease used.
 void ArrayQueue::dequeue()
 {
 	if (isEmpty())
@@ -61,6 +82,11 @@ void ArrayQueue::dequeue()
 	used--;
 }
 
+//-------------------------------------
+//Peekfront()
+//Return the value at the front of the queue.
+// If the queue is empty.
+//return -1.
 int ArrayQueue::peekfront()
 {
 	if (isEmpty())
@@ -70,11 +96,25 @@ int ArrayQueue::peekfront()
 	return data[front];
 }
 
+//-------------------------------------
+//isEmpty()
+//Return true if the queue has no elements.
+//Otherwise return false.
 bool ArrayQueue::isEmpty() const
 {
 	return used == 0;
 }
 
+//-------------------------------------
+// grow()
+// Double the array capacity.
+//
+// Create a new array with double size.
+// Copy all queue elements to the new array,
+// starting from index 0.
+// Delete the old array,
+// update data pointer,
+// reset front to 0.
 void ArrayQueue::grow()
 {
 	int newCapacity = capacity * 2;
