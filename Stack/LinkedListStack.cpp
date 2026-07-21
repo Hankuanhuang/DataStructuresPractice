@@ -30,11 +30,19 @@ public:
 
 };
 
+//---------------------------------------------------
+//Creats an empty linked list.
+//Initializes the head pointer to nullptr
+//---------------------------------------------------
 LinkedListStack::LinkedListStack()
 {
 	top = nullptr;
 }
 
+//---------------------------------------------------
+//Release all nodes in the linked list.
+//Prevents memory leaks.
+//---------------------------------------------------
 LinkedListStack::~LinkedListStack()
 {
 	while (top != nullptr)
@@ -46,6 +54,10 @@ LinkedListStack::~LinkedListStack()
 
 }
 
+//---------------------------------------------------
+//Adds a new element to the top of the stack.
+//Create a new node and updates the top pointer.
+//---------------------------------------------------
 void LinkedListStack::push(int value)
 {
 	Node* newNode = new Node;
@@ -56,6 +68,10 @@ void LinkedListStack::push(int value)
 	top = newNode;
 }
 
+//---------------------------------------------------
+//Remove the top element from the stack.
+//Delete the top node and updates the top pointer.
+//---------------------------------------------------
 void LinkedListStack::pop()
 {
 	if (isEmpty())
@@ -68,6 +84,10 @@ void LinkedListStack::pop()
 	delete temp;
 }
 
+//---------------------------------------------------
+//Return the top element without removing it.
+//Return -1 if the stack is empty.
+//---------------------------------------------------
 int LinkedListStack::peek()
 {
 	if (isEmpty())
@@ -78,13 +98,19 @@ int LinkedListStack::peek()
 	return top->data;
 }
 
+//---------------------------------------------------
+//Checks whether the stack is empty.
+//Returns true if the top pointer is nullptr.
+//---------------------------------------------------
 bool LinkedListStack::isEmpty() const
 {
 	return top == nullptr;
 }
 
-
-
+//---------------------------------------------------
+//Prints all element from top to bottom.
+//Traverses the linked list until nullptr.
+//---------------------------------------------------
 void LinkedListStack::print()
 {
 	Node* current = top;
