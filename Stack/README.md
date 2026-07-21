@@ -46,8 +46,6 @@ You always put a new plate on the top, and you always take the top plate first.
 
 ## 📂 Array Implementation
 
-## 📂 Array Implementation
-
 ```cpp
 int* data;
 int capacity;
