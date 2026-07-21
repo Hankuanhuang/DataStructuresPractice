@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Queue/Queue.vcxproj" Id="af480d88-86d6-47ca-9dd0-459ea02292eb" />
+  <Project Path="Recursion/Recursion.vcxproj" Id="1c7dc5c8-6184-4b68-a7d5-3313759110d8" />
+  <Project Path="Stack/Stack.vcxproj" Id="ca1f7348-778b-4c5b-a19e-c98df59180b2" />
+</Solution>
