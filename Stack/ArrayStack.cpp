@@ -26,50 +26,66 @@ public:
 	void print();
 };
 
-ArrayStack::ArrayStack() 
+ArrayStack::ArrayStack() //Create an empty stack and allocates memory for the array.
 {
+	//Initial stack capacity
 	capacity = 6;
+
+	//No elements in the stack yet
 	used = 0;
+
+	//Allocate memory for the dynamic array
 	data = new int[capacity];
 }
 
-ArrayStack::~ArrayStack()
+ArrayStack::~ArrayStack()  //Adds a new element to the top of the stack.
 {
+	//Release dynamically allocated memory
 	delete[] data;
 }
 
 void ArrayStack::push(int value) 
 {
+	//Expand the array if it is full
 	if (used == capacity) 
 	{
 		grow();
 	}
+	//Insert the new value at the next available position
 	data[used] = value;
+
+	//Increase the number of the stored elemeents
 	used++;
 }
 
 void ArrayStack::pop()
 {
+	//Do nothing if the stack is empty
 	if (isEmpty()) 
 	{
 		return;
 	}
+
+	//Remove the top element
 	used--;
 }
 
 int ArrayStack::top()
 {
+	//Return -1 if the stack is empty
 	if (isEmpty())
 	{
 		return -1;
 	}
 
+	//Return the top element
 	return data[used - 1];
 
 }
 
-bool ArrayStack::isEmpty() const
+bool ArrayStack::isEmpty() const //Checks whether the stack contains any elements
 {
+	//The stack is empty when no elements are stored
 	return used == 0;
 }
 
