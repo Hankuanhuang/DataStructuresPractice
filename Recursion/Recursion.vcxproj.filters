@@ -21,5 +21,14 @@
     <ClCompile Include="Sum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sumArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="power.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Fibonacci.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
